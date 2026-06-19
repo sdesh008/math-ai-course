@@ -1,0 +1,17 @@
+Welcome to the Fundamental Theorem of Calculus lecture.
+
+The Fundamental Theorem of Calculus connects differentiation and integration.
+
+Part one: If F of x equals the integral from a to x of f of t dt, then the derivative of F equals f of x.
+This means the derivative of the accumulation function recovers the original integrand.
+
+Part two: A definite integral from a to b of f of x dx equals F of b minus F of a, where F is any antiderivative of f.
+This allows us to evaluate definite integrals using antiderivatives instead of Riemann sums.
+
+For example, integrate x squared from one to three. An antiderivative is x cubed over three.
+Evaluating from one to three gives twenty six over three.
+
+The Fundamental Theorem of Calculus makes calculus practical by turning area computation into a subtraction of antiderivatives.
+It also reveals that integration and differentiation are inverse operations.
+
+Thank you for watching this overview of the Fundamental Theorem of Calculus.

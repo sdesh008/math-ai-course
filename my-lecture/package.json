@@ -1,0 +1,32 @@
+{
+  "name": "my-lecture",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.478",
+    "katex": "^0.17.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.478"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.478",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "^9.39.4",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render": "remotion render src/index.ts MyComp out/fundamental-theorem.mp4",
+    "render:systems": "remotion render src/index.ts SystemsLecture out/systems.mp4 --codec h264",
+    "narrate": "edge-tts --voice en-US-AriaNeural --text-file narration.txt --write-media public/narration.mp3",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc"
+  }
+}

@@ -1,0 +1,22 @@
+## Matrix Representation
+- Represent the system as $A\mathbf{x} = \mathbf{b}$
+- Coefficient matrix $A$, variable vector $\mathbf{x}$, constant vector $\mathbf{b}$
+- This form generalizes solving systems to higher dimensions
+
+$$
+\begin{pmatrix}
+1 & 2 \\
+2 & -1
+\end{pmatrix}
+\begin{pmatrix}
+x \\[4pt]
+y
+\end{pmatrix}
+=
+\begin{pmatrix}
+5 \\[4pt]
+1
+\end{pmatrix}
+$$
+
+---

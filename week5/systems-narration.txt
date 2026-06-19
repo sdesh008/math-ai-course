@@ -1,0 +1,37 @@
+Narration script — one paragraph per slide (approx. 30–60s each)
+
+Slide 1 — Title
+Today we'll study systems of linear equations, a foundational topic connecting algebra and geometry. By the end of this lecture you'll be comfortable writing systems in matrix form and using Gaussian elimination to find and classify solutions.
+
+Slide 2 — Learning Objectives
+In this lecture you'll learn to write a system as $A\mathbf{x}=\mathbf{b}$, perform elementary row operations to solve for $\mathbf{x}$, identify pivot and free variables, and reason about solution sets using rank and column space.
+
+Slide 3 — Definitions & Notation
+A linear equation is an expression of the form $a_1x_1+\dots+a_nx_n=b$. We collect coefficients into a matrix $A$ and write $A\mathbf{x}=\mathbf{b}$. The augmented matrix $[A\mid\mathbf{b}]$ is a compact way to apply row operations.
+
+Slide 4 — Elementary Row Operations
+There are three row operations: swap rows, multiply a row by a nonzero scalar, and add a multiple of one row to another. Each operation preserves the solution set; we use them systematically to simplify the augmented matrix toward row-echelon form.
+
+Slide 5 — Gaussian Elimination (outline)
+Gaussian elimination uses row operations to create zeros below pivot positions so we can read off solutions by back-substitution. If pivots stop before the last column we may have free variables and parametric solutions.
+
+Slide 6 — Worked Example 1
+We solve a 2×2 system by reducing the augmented matrix: subtract three times the first row from the second to eliminate $x$ in the second equation, then solve for $y$ and back-substitute to find $x$. The process yields a unique numeric solution.
+
+Slide 7 — Worked Example 2
+The 3×3 example shows how dependent rows can cause a rank drop and introduce free variables. After elimination we'll either find a free variable to parametrize or exact values; I'll highlight the algebraic steps clearly so you can follow.
+
+Slide 8 — Classifying Solutions: Rank
+Rank gives a crisp algebraic test: if adding $\mathbf b$ increases rank, the system is inconsistent. If ranks match and equal the number of variables, the solution is unique. If ranks match but are smaller, there are infinite solutions parameterized by free variables.
+
+Slide 9 — Geometric Interpretation
+Think of each equation as a line or plane. In two variables solutions are line intersections: one point, none (parallel), or infinitely many (coincident). This geometric view helps build intuition for classification.
+
+Slide 10 — In-Class Activity
+Work with your partner: reduce the system you're given, classify it, and decide whether to present a short reason why your system fits one of the three categories. I'll circulate and check reasoning.
+
+Slide 11 — Homework Overview
+The homework gives practice solving and classifying systems, and includes one example that highlights dependent rows. Use row reduction and check ranks explicitly.
+
+Slide 12 — Summary & Closing
+Key takeaways: row operations preserve solutions, rank controls solvability, and free variables give parametric solutions. Practice these steps until the mechanical process is fluid.

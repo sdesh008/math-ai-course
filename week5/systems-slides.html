@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slides — Systems of Linear Equations</title>
+<style>
+  :root{--bg:#f7f9fc;--slide:#fff;--accent:#2b7cff}
+  body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);margin:0}
+  .deck{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center}
+  .slide{width:860px;height:540px;background:var(--slide);border-radius:12px;box-shadow:0 10px 30px rgba(20,30,60,0.08);padding:36px;box-sizing:border-box;display:none}
+  .slide.active{display:block}
+  h1,h2{margin:0 0 12px}
+  ul{margin:8px 0 0 20px}
+  .controls{position:fixed;left:16px;bottom:16px;display:flex;gap:8px}
+  button{background:var(--accent);color:#fff;border:0;padding:8px 12px;border-radius:8px;cursor:pointer}
+  .meta{position:fixed;right:16px;bottom:16px;color:#556}
+</style>
+</head>
+<body>
+  <div class="deck">
+    <div id="s0" class="slide active">
+      <h1>Systems of Linear Equations</h1>
+      <p><strong>Audience:</strong> Undergraduate linear algebra</p>
+      <ul>
+        <li>Goal: Solve $A\mathbf{x}=\mathbf{b}$, classify solution sets, and connect algebra to geometry</li>
+        <li>Outline: elimination, pivots, rank, column space, worked examples</li>
+      </ul>
+    </div>
+
+    <div id="s1" class="slide">
+      <h2>Learning Objectives</h2>
+      <ul>
+        <li>Write a system as $A\mathbf{x}=\mathbf{b}$ and form $[A\mid\mathbf{b}]$</li>
+        <li>Perform elementary row operations and Gaussian elimination</li>
+        <li>Classify solutions: unique, none, infinite</li>
+        <li>Use rank and column space to test solvability</li>
+      </ul>
+    </div>
+
+    <div id="s2" class="slide">
+      <h2>Definitions & Notation</h2>
+      <ul>
+        <li>Linear equation: $a_1x_1+\dots+a_nx_n=b$</li>
+        <li>System: $A\mathbf{x}=\mathbf{b}$ with $A\in\mathbb{R}^{m\times n}$</li>
+        <li>Augmented matrix: $[A\mid\mathbf{b}]$</li>
+      </ul>
+    </div>
+
+    <div id="s3" class="slide">
+      <h2>Elementary Row Operations</h2>
+      <ul>
+        <li>Swap rows: $R_i\leftrightarrow R_j$</li>
+        <li>Multiply a row by nonzero scalar: $cR_i$</li>
+        <li>Add multiple: $R_i\leftarrow R_i+cR_j$</li>
+        <li>All preserve the solution set</li>
+      </ul>
+    </div>
+
+    <div id="s4" class="slide">
+      <h2>Gaussian Elimination (outline)</h2>
+      <ul>
+        <li>Use row ops to reach Row-Echelon Form (REF)</li>
+        <li>Identify pivot columns and do back-substitution</li>
+        <li>Free variables → parametric solutions</li>
+      </ul>
+    </div>
+
+    <div id="s5" class="slide">
+      <h2>Worked Example 1 — 2×2 (unique)</h2>
+      <p>Solve: $x+2y=5$, $3x-y=4$</p>
+      <ul>
+        <li>Augmented matrix: $[\begin{smallmatrix}1&2&\mid&5\\3&-1&\mid&4\end{smallmatrix}]$</li>
+        <li>$R_2\leftarrow R_2-3R_1\Rightarrow [1\ 2\ |\ 5;\ 0\ -7\ |\ -11]$</li>
+        <li>$y=11/7$, $x=13/7$</li>
+      </ul>
+    </div>
+
+    <div id="s6" class="slide">
+      <h2>Worked Example 2 — 3×3 (unique)</h2>
+      <p>System: $x+y+z=2$, $2x+3y+z=5$, $x+2y+2z=4$</p>
+      <ul>
+        <li>Augmented matrix and elimination leads to $2z=1$ so $z=1/2$</li>
+        <li>Then $y=3/2$, $x=0$</li>
+        <li>Solution: $(0,\tfrac{3}{2},\tfrac{1}{2})$</li>
+      </ul>
+    </div>
+
+    <div id="s7" class="slide">
+      <h2>Classifying Solutions: Rank</h2>
+      <ul>
+        <li>If $\mathrm{rank}(A)<\mathrm{rank}([A\mid\mathbf{b}])$ ⇒ no solution</li>
+        <li>If $\mathrm{rank}(A)=\mathrm{rank}([A\mid\mathbf{b}])=n$ ⇒ unique solution</li>
+        <li>If $\mathrm{rank}(A)=\mathrm{rank}([A\mid\mathbf{b}])<n$ ⇒ infinitely many solutions</li>
+      </ul>
+    </div>
+
+    <div id="s8" class="slide">
+      <h2>Geometric Interpretation</h2>
+      <ul>
+        <li>$n=2$: lines in $
+        $ the plane — intersect in point, be parallel, or coincide</li>
+        <li>$n=3$: planes in 3D — intersect in point, line, plane, or empty</li>
+        <li>$\mathbf{b}\in\mathrm{Col}(A)$ iff solvable</li>
+      </ul>
+    </div>
+
+    <div id="s9" class="slide">
+      <h2>In-Class Activity (10 min)</h2>
+      <ul>
+        <li>Pairs: each pair solves one system (unique / none / infinite)</li>
+        <li>Reduce, classify, and prepare a one-line justification</li>
+      </ul>
+    </div>
+
+    <div id="s10" class="slide">
+      <h2>Homework Exercises</h2>
+      <ol>
+        <li>Solve & classify: $x+2y-z=1$, $2x+4y-2z=2$, $-x+y+z=0$</li>
+        <li>Decide if $A=\begin{pmatrix}1&2\\2&4\end{pmatrix}$, $\mathbf b=(3,7)^T$ is solvable</li>
+        <li>Solve: $x-y+2z=3$, $2x+y-z=0$, $-x+3y+z=4$</li>
+      </ol>
+    </div>
+
+    <div id="s11" class="slide">
+      <h2>Summary & Tips</h2>
+      <ul>
+        <li>Row ops preserve solutions; practice the mechanics</li>
+        <li>Rank determines solvability; free variables give parametric families</li>
+        <li>Relate algebra to geometry for intuition</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="prev">◀ Prev</button>
+    <button id="next">Next ▶</button>
+    <button id="present">Present</button>
+  </div>
+  <div class="meta">Slide <span id="idx">1</span> / 12</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let idx = 0; const total = slides.length;
+  const idxEl = document.getElementById('idx');
+  function show(i){ slides.forEach(s=>s.classList.remove('active')); slides[i].classList.add('active'); idxEl.textContent = (i+1) + ' / ' + total; }
+  document.getElementById('next').addEventListener('click', ()=>{ if(idx < total-1) idx++; show(idx); });
+  document.getElementById('prev').addEventListener('click', ()=>{ if(idx>0) idx--; show(idx); });
+  document.addEventListener('keydown', e=>{ if(e.key==='ArrowRight') { if(idx<total-1) idx++; show(idx);} if(e.key==='ArrowLeft'){ if(idx>0) idx--; show(idx);} if(e.key===' ') { e.preventDefault(); if(idx<total-1) idx++; else idx=0; show(idx);} });
+  document.getElementById('present').addEventListener('click', ()=>{ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); });
+  show(0);
+</script>
+</body>
+</html>
