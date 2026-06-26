@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"zotero": {
+			"type": "stdio",
+			"command": "C:\\Users\\sddes\\anaconda3\\envs\\math\\Scripts\\zotero-mcp.exe",
+			"args": ["serve"],
+			"env": {
+				"ZOTERO_LOCAL": "true"
+			}
+		}
+	},
+	"inputs": []
+}
