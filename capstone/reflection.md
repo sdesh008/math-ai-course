@@ -1,0 +1,27 @@
+**How did your workflow change during this course? Give one concrete before/after example.**
+
+During the third week's module, I remember there being a huge emphasis on having a well-structured prompt. At the time I took it as something obvious and didn't think much of it. However, I soon came to realize that the output can only be as a good as the prompt and even then it's not guaranteed to be as good. At times, it felt like I was spending more time trying to get the AI to understand what I wanted than actually doing the work.
+
+For example, in the week that we used AI to help teach a math concept, I noticed in the video that the AI made with Remotion had two equations at the bottom of each slide--one that was formatted correctly as a LaTeX equation and one that was not. I tried prompting the AI that each slide had a duplicate equation and to remove the duplicate. Sure enough, the AI did remove the duplicate, but it also removed the correctly formatted equation and left the incorrectly formatted one. I had to go back and manually fix the slides to have the correct equations. This was a good reminder that even though AI can be a powerful tool, it can easily misinterpret general requests and that specificity is key.
+
+Another issue I ran into that changed my workflow was trusting that the AI would create code that accomplished what I prompted it to do but being unfamiliar with the code it generated which could sometimes be faulty. This made it particularly challenging to debug when the code didn't work as expected. As such, I had to change the prompting to be more explicit in the comments above each section of the code to describe what each section was supposed to do so that any debugging that had to be done could be done more easily.
+
+**What could the AI tools NOT do well? Give a specific example where Copilot or a skill failed you and what you had to fix manually.**
+
+When creating the slides for the math concept, there were a few egregious errors that the AI made that I had to fix manually. For example, there were arithmetic mistakes in one of the limit definition of a derivative slides, some of the content of the slides ran off the page, some LaTeX equations were not formatted correctly, and in terms of the intended curriculum, the AI introduced topics too early. 
+
+After I prompted the AI to fix the arithmetic mistake on the limit definition of a derivative slide, it fixed the mistake but then created a new slide titled "Verifying the Result Using Power Rule" which as any seasoned calculus professor would know, should not be introduced until after the limit definition of a derivative has been fully explained and understood. Generally, it seems like the AI has access to so much content to pull from that it doesn't know what is appropriate to introduce at a given time.
+
+Even when the AI worked out the solutions in my ordinary differential equations study guide, it would suggest taking shortcuts such as using the characteristic polynomial method without explaining why such a method is appropriate or why it can even be used. I had to go back and add in the reasoning for why the characteristic polynomial method was appropriate to use in that particular case.
+
+**Which single skill or agent feature had the biggest impact on your work, and why?**
+
+The math-tutor skill had the biggest impact on my work. In particular, it was here that I learned the importance of emphasizing telling the AI who the audience was. Without any context, the AI will generate content that is either too advanced (using methods that either have not been introduced yet or should not be introduced yet) or too simple. By emphasizing the intended audience, the AI seemed to have an easier time generating content that was more appropriate in difficulty and level of detail.
+
+**What would you build or automate next, now that you know how to create skills?**
+
+During the spring semester earlier this year, I relied on something called a SARIMAX model to forecast the bond price in a video game that I play that has its own in-game economy. The model was pre-built in Python from one of the packages and I would like to build a study guide that explains the underlying theory of why the SARIMAX model works so well with time series regression. 
+
+In particular, the moving average (MA) component of the SARIMAX model relies on taking the error from the previous time step and using it to predict the next time step, which is unlike anything I've seen in any other regression model. How can the error of the model be used before the model has even been fit? I get the sense that it has something to do with how ordinary differential equations are solved, but I would like to explore this further. 
+
+Additionally, I did not get the chance use the exogenous variable component (X) of the SARIMAX model, which allows for the inclusion of external variables that may affect the time series. I was already thinking that a good exogenous variable would be the daily player count for this video game but I would like to explore the theory behind the SARIMAX model before just blindly using it and hoping for the best. Lastly, I would like to automate the use of APIs to pull the data from sources online to feed into the SARIMAX model, which is something I was unable to fully explore during the spring semester due to time constraints.
